@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	id="org.apache.cordova.plugin.speechrecognizer"
+	version="0.2.0">
+  
+  <name>Speech Recognizer</name>
+  <description>Cordova Speech Recognizer Plugin</description>
+  <license>Apache 2.0</license>
+  <keywords>cordova,speechrecognizer</keywords>
+  
+  <js-module src="www/SpeechRecognizer.js" name="SpeechRecognizer">
+    <clobbers target="navigator.SpeechRecognizer" />
+  </js-module>
+  
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="SpeechRecognizer">
+	<param name="android-package" value="org.apache.cordova.plugin.SpeechRecognizer"/>
+      </feature>
+    </config-file>
+    
+    <source-file src="src/android/SpeechRecognizer.java" target-dir="src/org/apache/cordova/plugin/" />
+    <source-file src="src/android/SpeechRecognizer.java" target-dir="src/org/apache/cordova/plugin/" />
+    
+  </platform>
+</plugin>
