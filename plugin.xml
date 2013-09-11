@@ -22,7 +22,7 @@
     </config-file>
     
     <source-file src="src/android/SpeechRecognizer.java" target-dir="src/org/apache/cordova/plugin/" />
-    <source-file src="src/android/SpeechRecognizer.java" target-dir="src/org/apache/cordova/plugin/" />
+    <source-file src="src/android/LanguageDetailsChecker.java" target-dir="src/org/apache/cordova/plugin/" />
     
   </platform>
 </plugin>
