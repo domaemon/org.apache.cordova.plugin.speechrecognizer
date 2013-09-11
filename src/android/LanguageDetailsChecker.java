@@ -14,7 +14,7 @@
  *
  */
 
-package com.phonegap.plugins.speech;
+package org.apache.cordova.plugin;
 
 import java.util.List;
 
