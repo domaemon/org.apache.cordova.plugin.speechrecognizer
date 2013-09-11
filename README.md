@@ -2,7 +2,6 @@ This software is heavily based on the work of https://github.com/poiuytrez/Speec
 
 The repository name was changed to support the Cordova plugin CLI installation.
 
-
 Android SpeechRecognizer plugin for Cordova/Phonegap
 ===================================
 This plugin provides access to the speech recognition feature. This plugin will recognize commands, phrases, etc as spoken by the user.
@@ -21,17 +20,8 @@ To get professional non-free support for the plugin, please contact me at gcharh
 
 Installation 
 -------------
-* Create a 'com/phonegap/plugins/speech' folder under 'src' and add [LanguageDetailsChecker.java](LanguageDetailsChecker.java) and [SpeechRecognizer.java](SpeechRecognizer.java) to it.
-* Add [SpeechRecognizer.js](SpeechRecognizer.js) in your www folder.  
-* Add in your index.html  
-`<script type="text/javascript" charset="utf-8" src="SpeechRecognizer.js"></script>`  
-* In res/xml/config.xml, add 
-
-```xml
-<feature name="SpeechRecognizer">  
-      <param name="android-package" value="com.phonegap.plugins.speech.SpeechRecognizer"/>  
-</feature> 
-```    
+1) cordova plugin add https://github.com/domaemon/org.apache.cordova.plugin.speechrecognizer.git
+2) call navigator.SpeechRecognizer object from your javascript (see below for an example).
 
 Usage
 -------
@@ -77,7 +67,7 @@ Full example
                 var maxMatches = 5;
                 var promptString = "Speak now";	// optional
                 var language = "en-US";						// optional
-                window.plugins.speechrecognizer.startRecognize(function(result){
+                navigator.SpeechRecognizer.startRecognize(function(result){
                     alert(result);
                 }, function(errorMessage){
                     console.log("Error message: " + errorMessage);
@@ -86,7 +76,7 @@ Full example
 
             // Show the list of the supported languages
             function getSupportedLanguages() {
-                window.plugins.speechrecognizer.getSupportedLanguages(function(languages){
+                navigator.SpeechRecognizer.getSupportedLanguages(function(languages){
                     // display the json array
                     alert(languages);
                 }, function(error){
